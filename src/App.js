@@ -37,14 +37,28 @@ const App = () => {
       setCards(shuffleArray(newMatrix.flat()));
       setScore((prevScore) => prevScore + 1);
     } else {
-      resetGame();
+      document.querySelector(".lost-msg").classList.remove("is-hidden");
     }
   };
 
   useEffect(() => {
+
+    document.querySelector(".close-lost").addEventListener("click", () => {
+      document.querySelector(".lost-msg").classList.add("is-hidden");
+      resetGame();
+    });
+
+    document.querySelector(".close-win").addEventListener("click", () => {
+      document.querySelector(".win-msg").classList.add("is-hidden");
+      resetGame();
+    });
+
+  }, []);
+
+  useEffect(() => {
     if (score === 18) {
       setHiScore(score);
-      resetGame();
+      document.querySelector(".is-success").classList.remove("is-hidden");
     } else if (score > hiScore) {
       setHiScore(score);
     }
@@ -52,6 +66,18 @@ const App = () => {
 
   return (
     <div className="App">
+      <article className="message win-msg is-success is-hidden">
+        <div className="message-header">
+          <p>You win!</p>
+          <button className="delete close-win" aria-label="delete"></button>
+        </div>
+      </article>
+      <article className="message lost-msg is-warning is-hidden">
+        <div className="message-header">
+          <p>You lose!</p>
+          <button className="delete close-lost" aria-label="delete"></button>
+        </div>
+      </article>
       <header className="my-3">
         <h1 className="title">Memory Card Game</h1>
         <h2 className="subtitle">This application puts your memory to the test. You CAN NOT click on any image more than once or else your score resets to zero!</h2>

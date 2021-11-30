@@ -42,3 +42,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.message {
+  z-index: 99999;
+}
