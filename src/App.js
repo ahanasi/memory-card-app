@@ -19,7 +19,7 @@ const shuffleArray = (array) => {
 const App = () => {
   const [score, setScore] = useState(0);
   const [hiScore, setHiScore] = useState(0);
-  const [cards, setCards] = useState(shuffleArray(_.cloneDeep(images)));
+  const [cards, setCards] = useState(shuffleArray([...images]));
 
   let rows = cards.reduce(function (rows, key, index) {
     return (index % 9 === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows;
@@ -27,14 +27,13 @@ const App = () => {
 
   const resetGame = () => {
     setScore(0);
-    setCards([]);
-    setCards(_.cloneDeep([...images]));
+    setCards([...images]);
   };
 
   const handleClick = (row, col) => {
     const newMatrix = _.clone(rows);
     if (!newMatrix[row][col].isClicked) {
-      newMatrix[row][col].isClicked = true;
+      newMatrix[row][col] = { ...newMatrix[row][col], isClicked: true };
       setCards(shuffleArray(newMatrix.flat()));
       setScore((prevScore) => prevScore + 1);
     } else {
