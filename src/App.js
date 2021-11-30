@@ -1,45 +1,56 @@
 import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
+import _ from "lodash";
 import "./App.css";
 import "bulma/css/bulma.min.css";
 import Card from "./components/Card";
 import images from "./assets/images/index";
 
-const App = () => {
-  const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  };
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+};
 
-  const updateHighScore = () => {
-    if (score >= hiScore) {
-      setHiScore(score);
-    }
+const App = () => {
+  const [score, setScore] = useState(0);
+  const [hiScore, setHiScore] = useState(0);
+  const [cards, setCards] = useState(shuffleArray(_.cloneDeep(images)));
+
+  let rows = cards.reduce(function (rows, key, index) {
+    return (index % 9 === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows;
+  }, []);
+
+  const resetGame = () => {
+    setScore(0);
+    setCards([]);
+    setCards(_.cloneDeep([...images]));
   };
 
   const handleClick = (row, col) => {
-    let newMatrix = [...rows];
+    const newMatrix = rows.map((a) => [...a]);
 
     if (!newMatrix[row][col].isClicked) {
       newMatrix[row][col].isClicked = true;
       setCards(shuffleArray(newMatrix.flat()));
       setScore((prevScore) => prevScore + 1);
-      updateHighScore();
+    } else {
+      resetGame();
     }
   };
 
-  const [score, setScore] = useState(0);
-  const [hiScore, setHiScore] = useState(0);
-  const [cards, setCards] = useState(shuffleArray(images));
-
-  let rows = cards.reduce(function (rows, key, index) {
-    return (index % 9 == 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows;
-  }, []);
+  useEffect(() => {
+    if (score === 18) {
+      setHiScore(score);
+      resetGame();
+    } else if (score > hiScore) {
+      setHiScore(score);
+    }
+  }, [score]);
 
   return (
     <div className="App">
