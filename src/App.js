@@ -32,8 +32,7 @@ const App = () => {
   };
 
   const handleClick = (row, col) => {
-    const newMatrix = rows.map((a) => [...a]);
-
+    const newMatrix = _.clone(rows);
     if (!newMatrix[row][col].isClicked) {
       newMatrix[row][col].isClicked = true;
       setCards(shuffleArray(newMatrix.flat()));
