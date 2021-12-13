@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/memory-card-app/static/css/main.4db58a91.chunk.css",
+    "main.js": "/memory-card-app/static/js/main.b9156548.chunk.js",
+    "main.js.map": "/memory-card-app/static/js/main.b9156548.chunk.js.map",
+    "runtime-main.js": "/memory-card-app/static/js/runtime-main.f2cd0d28.js",
+    "runtime-main.js.map": "/memory-card-app/static/js/runtime-main.f2cd0d28.js.map",
+    "static/css/2.f9dc9d5b.chunk.css": "/memory-card-app/static/css/2.f9dc9d5b.chunk.css",
+    "static/js/2.190092bd.chunk.js": "/memory-card-app/static/js/2.190092bd.chunk.js",
+    "static/js/2.190092bd.chunk.js.map": "/memory-card-app/static/js/2.190092bd.chunk.js.map",
+    "static/js/3.3ff1e5b2.chunk.js": "/memory-card-app/static/js/3.3ff1e5b2.chunk.js",
+    "static/js/3.3ff1e5b2.chunk.js.map": "/memory-card-app/static/js/3.3ff1e5b2.chunk.js.map",
+    "index.html": "/memory-card-app/index.html",
+    "static/css/2.f9dc9d5b.chunk.css.map": "/memory-card-app/static/css/2.f9dc9d5b.chunk.css.map",
+    "static/css/main.4db58a91.chunk.css.map": "/memory-card-app/static/css/main.4db58a91.chunk.css.map",
+    "static/js/2.190092bd.chunk.js.LICENSE.txt": "/memory-card-app/static/js/2.190092bd.chunk.js.LICENSE.txt",
+    "static/media/bakugo.1f71a509.jpeg": "/memory-card-app/static/media/bakugo.1f71a509.jpeg",
+    "static/media/chopper.97f2733b.jpeg": "/memory-card-app/static/media/chopper.97f2733b.jpeg",
+    "static/media/dio.62ed208a.jpeg": "/memory-card-app/static/media/dio.62ed208a.jpeg",
+    "static/media/gojo-satoru.c8380033.png": "/memory-card-app/static/media/gojo-satoru.c8380033.png",
+    "static/media/hange.14e151a9.jpeg": "/memory-card-app/static/media/hange.14e151a9.jpeg",
+    "static/media/hinata-shoyo.deb5704c.png": "/memory-card-app/static/media/hinata-shoyo.deb5704c.png",
+    "static/media/itadori.d8a8710f.jpeg": "/memory-card-app/static/media/itadori.d8a8710f.jpeg",
+    "static/media/killua.8e24f622.jpeg": "/memory-card-app/static/media/killua.8e24f622.jpeg",
+    "static/media/law.4bdcda3c.webp": "/memory-card-app/static/media/law.4bdcda3c.webp",
+    "static/media/nami.6441a174.png": "/memory-card-app/static/media/nami.6441a174.png",
+    "static/media/naruto.a6341cf2.jpeg": "/memory-card-app/static/media/naruto.a6341cf2.jpeg",
+    "static/media/nezuko.07175541.jpeg": "/memory-card-app/static/media/nezuko.07175541.jpeg",
+    "static/media/okumura.8b4c9ca5.png": "/memory-card-app/static/media/okumura.8b4c9ca5.png",
+    "static/media/roy.df22464b.jpeg": "/memory-card-app/static/media/roy.df22464b.jpeg",
+    "static/media/saiki.9d216984.jpeg": "/memory-card-app/static/media/saiki.9d216984.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2cd0d28.js",
+    "static/css/2.f9dc9d5b.chunk.css",
+    "static/js/2.190092bd.chunk.js",
+    "static/css/main.4db58a91.chunk.css",
+    "static/js/main.b9156548.chunk.js"
+  ]
+}
